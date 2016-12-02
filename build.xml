@@ -1,0 +1,176 @@
+<project name="LS Full Deployment" default="test" basedir="." xmlns:sf="antlib:com.salesforce">
+    <taskdef uri="antlib:com.salesforce" classpath="ant-salesforce.jar" />
+
+    <property file="build.properties"/>
+    <property name="tempdir" value="./.sf_deploy" />
+    <property name="org" value="org" />
+
+    <!-- Retrieve all the items of a particular metadata type -->
+    <target name="bulkRetrieve">
+        <mkdir dir="src"/>
+        <sf:bulkRetrieve username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" metadataType="${sf.metadataType}" retrieveTarget="src" pollWaitMillis="10000" maxPoll="100"/>
+    </target>
+
+    <!-- Retrieve all data from the src/package.xml, or all files -->
+    <target name="retrieveAll" description="Retrieves all files from server directly into ./src">
+        <sf:retrieve username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" retrieveTarget="src" unpackaged="src/package.xml" pollWaitMillis="10000" maxPoll="200"/>
+    </target>
+
+    <target name="cleanTempDir" description="Removes and recreates ./${tempdir}">
+        <delete includeEmptyDirs="true" quiet="true">
+            <fileset dir="${tempdir}" />
+        </delete>
+        <mkdir dir="${tempdir}" />
+    </target>
+
+    <target name="retrieveTemp" description="Retrieve from server to a temp directory">
+        <antcall target="cleanTempDir" />
+        <copy file="src/package.xml" todir="${tempdir}" />
+        <sf:retrieve username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" retrieveTarget="${tempdir}" unpackaged="${tempdir}/package.xml" pollWaitMillis="10000" maxPoll="200"/>
+    </target>
+
+    <target name="checkDeployStatus" description="Checks the status of a current deployment">
+        <antcall target="cleanTempDir" />
+        <copy file="src/package.xml" todir="${tempdir}" />
+        <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" deployRoot="${tempdir}" pollWaitMillis="10000" maxPoll="300" />
+    </target>
+
+    <target name="buildDestChanges" depends="retrieveTemp" description="Builds destructiveChanges.xml file based off server and local copy">
+        <exec executable="ruby">
+            <arg value="${sf.scriptdir}/compare_fields.rb" />
+        </exec>
+        <!-- Copies destructiveChanges.xml into src" -->
+        <copy file="destructiveChanges.xml" todir="src" />
+    </target>
+
+    <target name="buildTempDir" depends="cleanTempDir" description="Build temp directory with contents of ./src">
+        <!-- Copy source into temp dir -->
+        <copy todir="${tempdir}">
+            <fileset dir="src">
+                <include name="**/*.*" />
+                <exclude name="**/Reply.workflow" />
+                <exclude name="**/FairlanesLanesCustomerExecutive.role" />
+                <exclude name="**/FairlanesLanesCustomerManager.role" />
+                <exclude name="**/FairlanesLanesCustomerUser.role" />
+                <exclude name="**/MarijkeWiersemaHDDSCustomerExecutive.role" />
+                <exclude name="**/MarijkeWiersemaHDDSCustomerManager.role" />
+                <exclude name="**/MarijkeWiersemaHDDSCustomerUser.role" />
+                <exclude name="**/Chatter External User.profile" />
+                <exclude name="**/Chatter Free User.profile" />
+                <exclude name="**/Chatter Moderator User.profile" />
+                <exclude name="**/Customer Portal Manager Custom.profile" />
+                <exclude name="**/Customer Portal Manager Standard.profile" />
+                <exclude name="**/Guest License User.profile" />
+                <exclude name="**/Overage High Volume Customer Portal User.profile" />
+            </fileset>
+        </copy>
+        <!--<replace dir="${tempdir}/workflows" value=".${org}" token="[ORG_NAME]">
+            <include name="**/*.workflow" />
+        </replace>-->
+    </target>
+
+    <target name="buildDevTempDir" depends="cleanTempDir" description="Build temp directory with contents of ./src">
+        <!-- Copy source into temp dir -->
+        <copy todir="${tempdir}">
+            <fileset dir="src">
+               <include name="*.*" />
+                <include name="**/classes/*.*" />
+                <include name="**/components/*.*" />
+                <include name="**/pages/*.*" />
+                <include name="**/staticResources/*.*" />
+                <include name="**/triggers/*.*" />
+                <exclude name="**/objects/*.*" />
+                <exclude name="**/Reply.workflow" />
+                <exclude name="**/FairlanesLanesCustomerExecutive.role" />
+                <exclude name="**/FairlanesLanesCustomerManager.role" />
+                <exclude name="**/FairlanesLanesCustomerUser.role" />
+                <exclude name="**/MarijkeWiersemaHDDSCustomerExecutive.role" />
+                <exclude name="**/MarijkeWiersemaHDDSCustomerManager.role" />
+                <exclude name="**/MarijkeWiersemaHDDSCustomerUser.role" />
+                <exclude name="**/Chatter External User.profile" />
+                <exclude name="**/Chatter Free User.profile" />
+                <exclude name="**/Chatter Moderator User.profile" />
+                <exclude name="**/Customer Portal Manager Custom.profile" />
+                <exclude name="**/Customer Portal Manager Standard.profile" />
+                <exclude name="**/Guest License User.profile" />
+                <exclude name="**/Overage High Volume Customer Portal User.profile" />
+            </fileset>
+        </copy>
+        <!--<replace dir="${tempdir}/workflows" value=".${org}" token="[ORG_NAME]">
+            <include name="**/*.workflow" />
+        </replace>-->
+    </target>
+
+
+    <target name="buildCode" depends="cleanTempDir" description="Build temp directory with contents of ./src">
+        <!-- Copy source into temp dir -->
+        <copy todir="${tempdir}">
+            <fileset dir="src">
+                <include name="*.*" />
+                <include name="**/classes/*.*" />
+                <include name="**/components/*.*" />
+                <include name="**/pages/*.*" />
+                <include name="**/objects/*.*" />
+                <include name="**/staticResources/*.*" />
+                <include name="**/triggers/*.*" />
+            </fileset>
+        </copy>
+        <!-- Use code package.xml file -->
+        <copy file="${sf.scriptdir}/resources/code-package.xml" tofile="${tempdir}/package.xml" overwrite="true" />
+    </target>
+
+    <target name="buildDevCode" depends="cleanTempDir" description="Build temp directory with contents of ./src">
+        <!-- Copy source into temp dir -->
+        <copy todir="${tempdir}">
+            <fileset dir="src">
+                <include name="*.*" />
+                <include name="**/classes/*.*" />
+                <include name="**/components/*.*" />
+                <include name="**/pages/*.*" />
+                <include name="**/staticResources/*.*" />
+                <include name="**/triggers/*.*" />
+            </fileset>
+        </copy>
+        <!-- Use code package.xml file -->
+        <copy file="${sf.scriptdir}/resources/code-package.xml" tofile="${tempdir}/package.xml" overwrite="true" />
+    </target>
+
+    <!-- Deploys all code in directory Times out after 1 hour polling every minute-->
+    <target name="deployTemp" description="Deploys out of temp directory">
+        <!--<antcall target="buildTempDir" /> -->
+        <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" deployRoot="${tempdir}" maxPoll="120" pollWaitMillis="60000" />
+    </target>
+
+    <!-- Deploys all code in directory Times out after 1 hour polling every minute-->
+    <target name="deployAll" description="Deploys out of temp directory">
+        <!--<antcall target="buildTempDir" /> -->
+        <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" deployRoot="src" pollWaitMillis="60000" maxPoll="120" />
+    </target>
+
+    <!-- Deploy and Retreive fields from the ./file source directory (VIM and Sublime Script) -->
+    <target name="deployFile">
+        <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" deployRoot="file" />
+    </target>
+
+    <target name="retrieveFile">
+        <sf:retrieve username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" retrieveTarget="file" unpackaged="file/package.xml" />
+    </target>
+
+    <!-- Validates deployment and without committing any code -->
+    <target name="validateDeployTemp">
+        <!--<antcall target="buildTempDir" /> -->
+        <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" deployRoot="${tempdir}" pollWaitMillis="60000" maxPoll="60" checkOnly="true" />
+    </target>
+
+    <!-- Retrieve the information of all items of a particular metadata type -->
+    <target name="listMetadata">
+        <sf:listMetadata username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" metadataType="${sf.metadataType}"/>
+    </target>
+
+    <!-- Gets metadata info of all basic metadataTypes -->
+    <target name="listAllMetadata">
+        <sf:listMetadata username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" metadataType="ApexClass" resultFilePath=".sf_deploy/classes.log"/>
+        <sf:listMetadata username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" metadataType="ApexPage" resultFilePath=".sf_deploy/pages.log"/>
+        <sf:listMetadata username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" metadataType="ApexTrigger" resultFilePath=".sf_deploy/triggers.log"/>
+    </target>
+</project>
