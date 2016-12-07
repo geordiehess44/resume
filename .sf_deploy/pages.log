@@ -1,6 +1,150 @@
 ************************************************************
+FileName: pages/Unauthorized.page
+FullName/Id: Unauthorized/066j0000002qt0FAAQ
+Manageable State: unmanaged
+Namespace Prefix: geordie
+Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+Last Modified By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+************************************************************
+************************************************************
+FileName: pages/BandwidthExceeded.page
+FullName/Id: BandwidthExceeded/066j0000002qt0CAAQ
+Manageable State: unmanaged
+Namespace Prefix: geordie
+Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+Last Modified By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+************************************************************
+************************************************************
+FileName: pages/ForgotPasswordConfirm.page
+FullName/Id: ForgotPasswordConfirm/066j0000002qt06AAA
+Manageable State: unmanaged
+Namespace Prefix: geordie
+Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+Last Modified By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+************************************************************
+************************************************************
+FileName: pages/Exception.page
+FullName/Id: Exception/066j0000002qt0DAAQ
+Manageable State: unmanaged
+Namespace Prefix: geordie
+Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+Last Modified By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+************************************************************
+************************************************************
+FileName: pages/MyProfilePage.page
+FullName/Id: MyProfilePage/066j0000002qt08AAA
+Manageable State: unmanaged
+Namespace Prefix: geordie
+Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+Last Modified By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+************************************************************
+************************************************************
+FileName: pages/SiteLogin.page
+FullName/Id: SiteLogin/066j0000002qt05AAA
+Manageable State: unmanaged
+Namespace Prefix: geordie
+Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+Last Modified By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+************************************************************
+************************************************************
+FileName: pages/ForgotPassword.page
+FullName/Id: ForgotPassword/066j0000002qt04AAA
+Manageable State: unmanaged
+Namespace Prefix: geordie
+Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+Last Modified By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+************************************************************
+************************************************************
+FileName: pages/FileNotFound.page
+FullName/Id: FileNotFound/066j0000002qt0BAAQ
+Manageable State: unmanaged
+Namespace Prefix: geordie
+Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+Last Modified By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+************************************************************
+************************************************************
+FileName: pages/SiteRegisterConfirm.page
+FullName/Id: SiteRegisterConfirm/066j0000002qt07AAA
+Manageable State: unmanaged
+Namespace Prefix: geordie
+Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+Last Modified By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+************************************************************
+************************************************************
+FileName: pages/IdeasHome.page
+FullName/Id: IdeasHome/066j0000002qt0HAAQ
+Manageable State: unmanaged
+Namespace Prefix: geordie
+Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+Last Modified By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+************************************************************
+************************************************************
+FileName: pages/SiteTemplate.page
+FullName/Id: SiteTemplate/066j0000002qt0AAAQ
+Manageable State: unmanaged
+Namespace Prefix: geordie
+Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+Last Modified By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+************************************************************
+************************************************************
+FileName: pages/SiteRegister.page
+FullName/Id: SiteRegister/066j0000002qt02AAA
+Manageable State: unmanaged
+Namespace Prefix: geordie
+Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+Last Modified By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+************************************************************
+************************************************************
+FileName: pages/UnderConstruction.page
+FullName/Id: UnderConstruction/066j0000002qt0GAAQ
+Manageable State: unmanaged
+Namespace Prefix: geordie
+Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+Last Modified By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+************************************************************
+************************************************************
+FileName: pages/ChangePassword.page
+FullName/Id: ChangePassword/066j0000002qt03AAA
+Manageable State: unmanaged
+Namespace Prefix: geordie
+Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+Last Modified By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+************************************************************
+************************************************************
 FileName: pages/Resume.page
 FullName/Id: Resume/066j0000002qszTAAQ
+Manageable State: unmanaged
+Namespace Prefix: geordie
+Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+Last Modified By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+************************************************************
+************************************************************
+FileName: pages/InMaintenance.page
+FullName/Id: InMaintenance/066j0000002qt0EAAQ
+Manageable State: unmanaged
+Namespace Prefix: geordie
+Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+Last Modified By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+************************************************************
+************************************************************
+FileName: pages/StdExceptionTemplate.page
+FullName/Id: StdExceptionTemplate/066j0000002qt09AAA
+Manageable State: unmanaged
+Namespace Prefix: geordie
+Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+Last Modified By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+************************************************************
+************************************************************
+FileName: pages/ghessResume.page
+FullName/Id: ghessResume/066j0000002qszxAAA
+Manageable State: unmanaged
+Namespace Prefix: geordie
+Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+Last Modified By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+************************************************************
+************************************************************
+FileName: pages/AnswersHome.page
+FullName/Id: AnswersHome/066j0000002qt0IAAQ
 Manageable State: unmanaged
 Namespace Prefix: geordie
 Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
