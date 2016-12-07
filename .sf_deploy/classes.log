@@ -1,6 +1,94 @@
 ************************************************************
+FileName: classes/SiteRegisterController.cls
+FullName/Id: SiteRegisterController/01pj0000004MQzMAAW
+Manageable State: unmanaged
+Namespace Prefix: geordie
+Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+Last Modified By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+************************************************************
+************************************************************
+FileName: classes/MyProfilePageControllerTest.cls
+FullName/Id: MyProfilePageControllerTest/01pj0000004MQzTAAW
+Manageable State: unmanaged
+Namespace Prefix: geordie
+Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+Last Modified By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+************************************************************
+************************************************************
+FileName: classes/ChangePasswordController.cls
+FullName/Id: ChangePasswordController/01pj0000004MQzOAAW
+Manageable State: unmanaged
+Namespace Prefix: geordie
+Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+Last Modified By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+************************************************************
+************************************************************
+FileName: classes/ghessResumeController.cls
+FullName/Id: ghessResumeController/01pj0000004MQzFAAW
+Manageable State: unmanaged
+Namespace Prefix: geordie
+Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+Last Modified By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+************************************************************
+************************************************************
+FileName: classes/ForgotPasswordControllerTest.cls
+FullName/Id: ForgotPasswordControllerTest/01pj0000004MQzRAAW
+Manageable State: unmanaged
+Namespace Prefix: geordie
+Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+Last Modified By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+************************************************************
+************************************************************
+FileName: classes/ChangePasswordControllerTest.cls
+FullName/Id: ChangePasswordControllerTest/01pj0000004MQzPAAW
+Manageable State: unmanaged
+Namespace Prefix: geordie
+Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+Last Modified By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+************************************************************
+************************************************************
 FileName: classes/MyContactListController.cls
 FullName/Id: MyContactListController/01pj00000004hF0AAI
+Manageable State: unmanaged
+Namespace Prefix: geordie
+Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+Last Modified By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+************************************************************
+************************************************************
+FileName: classes/MyProfilePageController.cls
+FullName/Id: MyProfilePageController/01pj0000004MQzSAAW
+Manageable State: unmanaged
+Namespace Prefix: geordie
+Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+Last Modified By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+************************************************************
+************************************************************
+FileName: classes/SiteRegisterControllerTest.cls
+FullName/Id: SiteRegisterControllerTest/01pj0000004MQzNAAW
+Manageable State: unmanaged
+Namespace Prefix: geordie
+Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+Last Modified By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+************************************************************
+************************************************************
+FileName: classes/SiteLoginControllerTest.cls
+FullName/Id: SiteLoginControllerTest/01pj0000004MQzLAAW
+Manageable State: unmanaged
+Namespace Prefix: geordie
+Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+Last Modified By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+************************************************************
+************************************************************
+FileName: classes/ForgotPasswordController.cls
+FullName/Id: ForgotPasswordController/01pj0000004MQzQAAW
+Manageable State: unmanaged
+Namespace Prefix: geordie
+Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+Last Modified By (Name/Id): Geordie Hess/005j000000BcHSQAA3
+************************************************************
+************************************************************
+FileName: classes/SiteLoginController.cls
+FullName/Id: SiteLoginController/01pj0000004MQzKAAW
 Manageable State: unmanaged
 Namespace Prefix: geordie
 Created By (Name/Id): Geordie Hess/005j000000BcHSQAA3
